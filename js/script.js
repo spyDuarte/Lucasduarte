@@ -35,6 +35,7 @@ contactForm.addEventListener('submit', async (event) => {
       method: 'POST',
       body: new FormData(contactForm),
       headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(10000),
     });
 
     if (response.ok) {
@@ -44,7 +45,9 @@ contactForm.addEventListener('submit', async (event) => {
       formStatus.textContent = 'Não foi possível enviar a mensagem. Tente novamente ou use o WhatsApp/e-mail.';
     }
   } catch (error) {
-    formStatus.textContent = 'Erro de conexão. Tente novamente ou use o WhatsApp/e-mail.';
+    formStatus.textContent = error.name === 'TimeoutError'
+      ? 'O envio demorou demais. Tente novamente ou use o WhatsApp/e-mail.'
+      : 'Erro de conexão. Tente novamente ou use o WhatsApp/e-mail.';
   } finally {
     submitButton.disabled = false;
   }
