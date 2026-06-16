@@ -14,7 +14,12 @@ Site estático (HTML/CSS/JS puro), sem dependências de build, pronto para publi
 2. **Foto**: troque os blocos `.hero-photo-placeholder` / `.about-photo-placeholder` por `<img>` reais.
 3. **Endereços e horários**: seção "Localizações" — preencha endereço e horários de Teresópolis e Balneário Camboriú.
 4. **Contato**: atualize WhatsApp (`https://wa.me/55...`), e-mail e Instagram na seção de contato.
-5. **Formulário**: o formulário atual apenas simula envio. Para receber as mensagens, integre com um serviço como Formspree, EmailJS, ou um backend próprio.
+5. **Formulário**: já integrado com o [Formspree](https://formspree.io) (gratuito, sem backend). Para ativar:
+   1. Crie uma conta gratuita em formspree.io usando o e-mail onde quer receber as mensagens.
+   2. Crie um novo formulário e copie o **Form ID** (ou a URL completa, algo como `https://formspree.io/f/abcd1234`).
+   3. Em `index.html`, na seção de Contato, troque `SEU_FORM_ID` (no atributo `action` do `<form>`) pelo ID copiado.
+   4. Confirme o e-mail de verificação que o Formspree envia na primeira submissão de teste.
+   5. Enquanto `SEU_FORM_ID` não for substituído, o site avisa o visitante que o formulário ainda não está configurado, em vez de simular um envio falso.
 
 ## Como visualizar localmente
 

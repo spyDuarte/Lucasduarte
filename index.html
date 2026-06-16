@@ -151,7 +151,7 @@
           <li><strong>Instagram:</strong> <a href="https://instagram.com/seuusuario" target="_blank" rel="noopener">@seuusuario</a></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/SEU_FORM_ID" method="POST">
         <label for="name">Nome</label>
         <input type="text" id="name" name="name" required>
 
@@ -170,6 +170,8 @@
 
         <label for="message">Mensagem</label>
         <textarea id="message" name="message" rows="4"></textarea>
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
         <p class="form-status" id="formStatus" role="status"></p>
